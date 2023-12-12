@@ -1,0 +1,142 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Ubuntu:ital,wght@1,300&display=swap');
+
+:root {
+  --gradient: linear-gradient(to right, #67b26f, #4ca2cd);
+
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--gradient);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1vw;
+}
+
+/* .navb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position:sticky;
+  top: 0;
+} */
+.navb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.logo-image {
+  width: 100px; 
+  height: 100px; 
+  padding-right: 900px;
+}
+
+.links {
+  display: flex;
+  align-items:end;
+  flex-direction: row;
+  
+}
+
+.links a {
+  margin-left: 20px; 
+  color: rgb(211, 21, 21);
+  text-decoration: none;
+  background-color: azure;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 7px;
+  padding-right:7px;
+
+  border-radius: 2px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.logo-image {
+  width: 100px;
+  height: 50px;
+  
+}
+a{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.f1 {
+  margin: auto;
+  margin-top: 20px;
+  height: 60vh;
+  width: 30vw;
+  background-color: #f5f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 5%;
+  box-shadow: 21px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #43C6AC;
+}
+
+input:hover {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #43C6AC;
+}
+
+h3 {
+  size: 3rem;
+}
+
+.nameinput,
+.passinput,
+.emailinput {
+  background-color: rgb(239, 239, 245);
+  border: none;
+  border-bottom: #9b0a53;
+  padding: 2%;
+  height: 1rem;
+  width: 10rem;
+  border-radius: 8px;
+}
+
+
+.href1{
+
+  background-color: azure;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 7px;
+  padding-right:7px;
+
+  border-radius: 2px;
+}
+
+
+.next-home
+{
+  width: max-content;
+  height: 1000px;
+}
