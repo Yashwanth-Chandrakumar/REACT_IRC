@@ -28,12 +28,12 @@ description: React Project
 
 ## Dark Mode:
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-12-13 143025.png" alt=""><figcaption></figcaption></figure>
 
 ## Products Page:
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-12-13 155143.png" alt=""><figcaption></figcaption></figure>
 
 ## Isometric Product Display Page:
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Screenshot 2023-12-13 155204.png" alt=""><figcaption></figcaption></figure>
