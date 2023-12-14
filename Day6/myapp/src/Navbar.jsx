@@ -4,24 +4,46 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-// import Avatar from '@mui/material/Avatar';
+import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-// import AdbIcon from '@mui/icons-material/Adb';
+import AdbIcon from "@mui/icons-material/Adb";
 import Rocket from "@mui/icons-material/RocketLaunch";
 import Account from "@mui/icons-material/AccountCircle";
 import { useNavigate } from "react-router-dom";
 import Modal from "@mui/material/Modal";
-import { blue } from "@mui/material/colors";
+import { TextField } from "@mui/material";
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Unstable_Grid2';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import OutlinedCard from "./OutlinedCard";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = ["Home", "Login", "Aboutus"];
+const Item = styled(Paper)(() => ({
+    textAlign:'center',
+}));
 
 function Nav() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    border: "2px solid #000",
+    boxShadow: 24,
+    p: 4,
+  };
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -40,30 +62,8 @@ function Nav() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
-  const handleAbout = () => {
-    navigate("/about");
-  };
   const handleHome = () => {
     navigate("/");
-  };
-  const handleContact = () => {
-    navigate("/contact");
-  };
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 400,
-    bgcolor: "background.paper",
-    border: "2px solid #000",
-    boxShadow: 24,
-    p: 4,
   };
 
   return (
@@ -87,7 +87,7 @@ function Nav() {
                 textDecoration: "none",
               }}
             >
-              V
+              Yashwanth
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -126,7 +126,7 @@ function Nav() {
                 ))}
               </Menu>
             </Box>
-            <Rocket sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
             <Typography
               variant="h5"
               noWrap
@@ -143,7 +143,7 @@ function Nav() {
                 textDecoration: "none",
               }}
             >
-              V
+              Yashwanth
             </Typography>
             <Box
               sx={{
@@ -151,40 +151,27 @@ function Nav() {
                 display: {
                   xs: "none",
                   md: "flex",
-                  justifyContent: "right",
+                  justifyContent: "end",
                   gap: "1rem",
-                  mr: 2,
                 },
               }}
             >
-              <Button
-                onClick={handleHome}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Home
-              </Button>
-              <Button
-                onClick={handleAbout}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                About
-              </Button>
-              <Button
-                onClick={handleContact}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Contact
-              </Button>
+              {pages.map((page) => (
+                <Button sx={{ my: 2, color: "white", display: "block" }} Home>
+                  {page}
+                </Button>
+              ))}
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Login">
+              <Tooltip title="Open settings">
                 <IconButton sx={{ p: 0 }} onClick={handleOpen}>
                   <Account
                     sx={{
                       display: { xs: "none", md: "flex" },
-                      marginRight: 2,
-                      color: "white",
+                      mr: 1,
+                      color: "#fff",
+                      marginLeft: "1rem",
                     }}
                   />
                 </IconButton>
@@ -193,44 +180,75 @@ function Nav() {
           </Toolbar>
         </Container>
       </AppBar>
-      <Modal
-        sx={style}
+
+       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box>
+        <Box sx={style}>
           <Typography
             id="modal-modal-title"
             variant="h4"
             component="h2"
-            color={blue}
+            sx={{ color: "blueviolet" }}
           >
             Login
           </Typography>
-
-          <TextField
-            id="outlined-basic"
-            label="Username"
-            variant="outlined"
-            sx={{ my: 1, width: "100%" }}
-          />
-          <TextField
-            id="outlined-basic"
-            label="Password"
-            variant="outlined"
-            sx={{ my: 1, width: "100%" }}
-          />
-          <Button
-            variant="contained"
-            color="primary"
-            sx={{ my: 1, width: "100%" }}
-          >
-            Login
-          </Button>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            <TextField
+              id="outlined-basic"
+              label="Username"
+              variant="outlined"
+              sx={{width:'100%' ,mt:1}}/>
+            
+            <TextField
+              id="outlined-basic"
+              label="Password"
+              variant="outlined"
+             sx={{width:'100%',mt:1}}/>
+            
+            <Button variant="contained" sx={{width:'100%',mt:1}}>Login</Button>
+          </Typography>
         </Box>
-      </Modal>
+      </Modal> 
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        
+        <Grid xs={3}>
+          <Item>Hi</Item>
+        </Grid>
+        <Grid xs={3}>
+          <Item>Hi</Item>
+        </Grid>
+        <Grid xs={3}>
+          <Item>Hi</Item>
+        </Grid>
+        <Grid xs={3}>
+          <Item>Hi</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>Hello</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>Hello</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>Hello</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>Hello</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>Hello</Item>
+        </Grid>
+        <Grid xs={2}>
+          <Item>Hello</Item>
+        </Grid>
+      </Grid>
+      </Box>
+      <OutlinedCard/>
     </>
   );
 }
