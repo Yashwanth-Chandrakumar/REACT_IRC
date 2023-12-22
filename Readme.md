@@ -12,6 +12,9 @@
 # Home Page - Dark Mode
 <img src="https://github.com/Yashwanth-Chandrakumar/REACT_IRC/blob/main/CC2/Screenshot%202023-12-21%20091344.png">
 
+# Home Page - Popup
+<img src="https://github.com/Yashwanth-Chandrakumar/REACT_IRC/blob/main/CC2/Screenshot%202023-12-22%20101038.png">
+
 # Footer
 <img src="https://github.com/Yashwanth-Chandrakumar/REACT_IRC/blob/main/CC2/Screenshot%202023-12-21%20091205.png">
 
